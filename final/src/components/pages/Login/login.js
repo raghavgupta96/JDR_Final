@@ -1,22 +1,12 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/lib/Button";
 import Form from "react-bootstrap/lib/Form";
+import "./login.css";
 
-class App extends Component {
+class Login extends Component {
   render() {
     return (
-      <div
-        style={{
-          width: "300px",
-          height: "300px",
-          margin: "auto",
-          position: "absolute",
-          top: 0,
-          right: 0,
-          left: 0,
-          bottom: 0
-        }}
-      >
+      <div className="content">
         <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -42,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Login;
