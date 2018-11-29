@@ -7,23 +7,28 @@ const passenger = [
   {
     title: "Games",
     description: "Play games by yourself or with other passenger",
-    link: "/Games"
+    link: "/games"
   },
   {
     title: "Movies",
     description: "Watch something to pass the time",
-    link: "/Movies"
+    link: "/movies"
   },
   {
     title: "Shop",
     description: "Buy items from our in-flight catalogue",
-    link: "/Shop"
+    link: "/shop"
   },
   {
     title: "Attendant",
     description:
       "Request food, drinks or assistance from the flight attendants",
-    link: "/Attendant"
+    link: "/attendant"
+  },
+  {
+    title: "Twitter",
+    description: "Tweet about your flight",
+    link: "/twitter"
   }
 ];
 
@@ -31,12 +36,12 @@ const attendant = [
   {
     title: "Requests",
     description: "Attend to passenger requests",
-    link: "/Requests"
+    link: "/requests"
   },
   {
-    title: "Store",
+    title: "Orders",
     description: "Deliver Passenger purchases",
-    link: "/Store"
+    link: "/orders"
   }
 ];
 
@@ -45,7 +50,7 @@ const marshall = [
   {
     title: "Manifest",
     description: "See who is on the flight",
-    link: "/Manifest"
+    link: "/manifest"
   }
 ];
 
@@ -63,7 +68,11 @@ class Home extends Component {
     */
 
     return arr.map(app => (
-      <AppCard title={app.title} description={app.title} link={app.link} />
+      <AppCard
+        title={app.title}
+        description={app.description}
+        link={app.link}
+      />
     ));
   };
 
