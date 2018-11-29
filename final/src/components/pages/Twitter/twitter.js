@@ -8,7 +8,7 @@ class Twitter extends Component {
     return (
       <div>
         <Navi />
-        twitter shit here
+        Twitter Integration
       </div>
     );
   }
