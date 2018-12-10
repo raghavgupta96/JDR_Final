@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import AppCard from "../../ui/AppCard/appCard";
 import Navi from "../../ui/Navi/navi";
 import "./home.css";
+import game from "../../../img/game.jpg";
 
 const passenger = [
   {
     title: "Games",
     description: "Play games by yourself or with other passenger",
-    link: "/games"
+    link: "/games",
+    image: { game }
   },
   {
     title: "Movies",

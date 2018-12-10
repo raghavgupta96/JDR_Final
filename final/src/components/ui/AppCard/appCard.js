@@ -12,7 +12,7 @@ class AppCard extends Component {
       <div>
         <Link to={this.props.link} className="links">
           <Card style={{ width: "18rem", margin: "20px" }}>
-            <Card.Img variant="top" src={test} />
+            <Card.Img variant="top" src={this.props.tes6} />
             <Card.Body>
               <Card.Title>{this.props.title}</Card.Title>
               <Card.Text>{this.props.description}</Card.Text>

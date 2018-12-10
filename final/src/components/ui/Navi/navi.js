@@ -10,7 +10,7 @@ class Navi extends Component {
     return (
       <div>
         <Navbar bg="dark" variant="dark">
-          <Navbar.Brand>PRODUCT NAME</Navbar.Brand>
+          <Navbar.Brand>FLIES</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">

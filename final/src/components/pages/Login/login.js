@@ -10,6 +10,8 @@ class Login extends Component {
   render() {
     return (
       <div className="content">
+        <h1> Welcome! </h1>
+        <h2> Enjoy your inflight experience</h2>
         <Button variant="primary" type="submit" onClick={auth.login}>
           Log In
         </Button>
