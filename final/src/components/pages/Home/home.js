@@ -3,34 +3,41 @@ import AppCard from "../../ui/AppCard/appCard";
 import Navi from "../../ui/Navi/navi";
 import "./home.css";
 import game from "../../../img/game.jpg";
+import twitter from "../../../img/twitter.png";
+import shop from "../../../img/shop.png";
+import steward from "../../../img/steward.png";
 
 const passenger = [
   {
     title: "Games",
     description: "Play games by yourself or with other passenger",
     link: "/games",
-    image: { game }
+    image: game
   },
   {
     title: "Movies",
     description: "Watch something to pass the time",
-    link: "/movies"
+    link: "/movies",
+    image: game
   },
   {
     title: "Shop",
     description: "Buy items from our in-flight catalogue",
-    link: "/shop"
+    link: "/shop",
+    image: shop
   },
   {
     title: "Attendant",
     description:
       "Request food, drinks or assistance from the flight attendants",
-    link: "/attendant"
+    link: "/attendant",
+    image: steward
   },
   {
     title: "Twitter",
     description: "Tweet about your flight",
-    link: "/twitter"
+    link: "/twitter",
+    image: twitter
   }
 ];
 
@@ -74,6 +81,7 @@ class Home extends Component {
         title={app.title}
         description={app.description}
         link={app.link}
+        image={app.image}
       />
     ));
   };
