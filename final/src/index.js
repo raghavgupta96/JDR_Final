@@ -15,7 +15,9 @@ var config = {
   storageBucket: "cmpe172-jdr.appspot.com",
   messagingSenderId: "575351954956"
 };
-firebase.initializeApp(config);
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
+}
 
 ReactDOM.render(
   <BrowserRouter>

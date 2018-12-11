@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/lib/Button";
-import Form from "react-bootstrap/lib/Form";
 import Auth from "../../Auth.js";
 import "./login.css";
 
