@@ -46,12 +46,14 @@ const attendant = [
   {
     title: "Requests",
     description: "Attend to passenger requests",
-    link: "/requests"
+    link: "/attendant",
+    image: steward
   },
   {
     title: "Orders",
     description: "Deliver Passenger purchases",
-    link: "/orders"
+    link: "/orders",
+    image: shop
   }
 ];
 
@@ -64,18 +66,19 @@ const marshall = [
   }
 ];
 
+const currentUser = "attendant";
+
 class Home extends Component {
   renderCards = () => {
-    let arr = [...passenger];
     //get current user information
-    /*
-    if(current user === passenger){
-    arr = [...attendant]
+    let arr = [];
+    if (currentUser === "passenger") {
+      arr = [...passenger];
+    } else if (currentUser === "attendant") {
+      arr = [...attendant];
+    } else {
+      arr = [...marshall];
     }
-    else if(current user === attendant){
-    arr = [...marshall]
-    }
-    */
 
     return arr.map(app => (
       <AppCard

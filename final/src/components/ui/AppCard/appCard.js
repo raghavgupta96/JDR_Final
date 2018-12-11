@@ -19,17 +19,23 @@ class AppCard extends Component {
     window.alert("Ordered: " + this.input.value);
 
     db.settings({ timestampsInSnapshots: true });
-    const userRef = db.collection("Requests").add({
-      seatNumber: "E21",
-      order: this.input.value
-    });
+    const userRef = db
+      .collection("Requests")
+      .doc("Daany")
+      .set({
+        seatNumber: "E21",
+        order: this.input.value
+      });
   };
 
   callAttendant = () => {
-    const userRef = db.collection("Requests").add({
-      seatNumber: "E21",
-      order: "Calling Attendant"
-    });
+    const userRef = db
+      .collection("Requests")
+      .doc("Daany")
+      .set({
+        seatNumber: "E21",
+        order: "Calling Attendant"
+      });
   };
 
   isLinked = () => {

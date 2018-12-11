@@ -32,16 +32,17 @@ class shopCard extends Component {
   render() {
     const onSuccess = payment => {
       db.settings({ timestampsInSnapshots: true });
-      const userRef = db.collection("Shop").add({
-        seatNumber: "E21",
-        order: this.state.price,
-        quantity: this.input.value,
-        item: this.props.title
-      });
+      const userRef = db
+        .collection("Shop")
+        .doc("Daany")
+        .set({
+          seatNumber: "E21",
+          order: this.state.price,
+          quantity: this.input.value,
+          item: this.props.title
+        });
       console.log("Successful payment!", payment);
       window.alert("Ordered placed");
-
-      //window.location.reload();
     };
 
     const onError = error =>
