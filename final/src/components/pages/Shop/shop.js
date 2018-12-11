@@ -1,52 +1,37 @@
 import React, { Component } from "react";
-import AppCard from "../../ui/AppCard/appCard";
+import ShopCard from "../../ui/ShopCard/shopCard";
 import Navi from "../../ui/Navi/navi";
 import { withRouter } from "react-router-dom";
-import "./attendant.css";
-import steward from "../../../img/steward.png";
-import snacks from "../../../img/snacks.jpg";
-import drinks from "../../../img/drinks.jpg";
+import "./shop.css";
+import perfume1 from "../../../img/perfume1.jpg";
+import perfume2 from "../../../img/perfume2.jpg";
 
-const passenger = [
+const options = [
   {
-    title: "Snacks",
-    description: "Request for a light snack",
-    image: snacks,
+    title: "Versace Bright Crystal",
+    price: 65.0,
+    description: "3.0oz/90mL Eau de Toilette Spray for women.",
+    image: perfume1,
     dropdown: "snacks"
   },
   {
-    title: "Beverage",
-    description: "Watch something to pass the time",
-    image: drinks,
-    dropdown: "drinks"
-  },
-  {
-    title: "Attendant",
-    description: "Call the Attendant",
-    image: steward
+    title: "CK Be",
+    price: 40.0,
+    description: "6.7oz/200mL Eau de Toilette Spray for men.",
+    image: perfume2
   }
 ];
 
 class Shop extends Component {
   renderCards = () => {
-    let arr = [...passenger];
-    //get current user information
-    /*
-    if(current user === passenger){
-    arr = [...attendant]
-    }
-    else if(current user === attendant){
-    arr = [...marshall]
-    }
-    */
+    let arr = [...options];
 
     return arr.map(app => (
-      <AppCard
+      <ShopCard
         title={app.title}
         description={app.description}
-        link={app.link}
+        price={app.price}
         image={app.image}
-        dropdown={app.dropdown}
       />
     ));
   };
@@ -55,11 +40,11 @@ class Shop extends Component {
     return (
       <div>
         <Navi />
-        <h1>Make requests to the flight attendants</h1>
+        <h1>In-Flight Shopping</h1>
         <div className="Orders">{this.renderCards()}</div>
       </div>
     );
   }
 }
 
-export default withRouter(Attendant);
+export default withRouter(Shop);

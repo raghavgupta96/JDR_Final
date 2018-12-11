@@ -1,0 +1,11 @@
+.links {
+  text-decoration: none;
+  color: black;
+}
+
+.image {
+  height: auto;
+  width: auto;
+  max-height: 145px;
+  max-width: 100%;
+}

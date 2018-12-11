@@ -30,15 +30,6 @@ const passenger = [
 class Attendant extends Component {
   renderCards = () => {
     let arr = [...passenger];
-    //get current user information
-    /*
-    if(current user === passenger){
-    arr = [...attendant]
-    }
-    else if(current user === attendant){
-    arr = [...marshall]
-    }
-    */
 
     return arr.map(app => (
       <AppCard

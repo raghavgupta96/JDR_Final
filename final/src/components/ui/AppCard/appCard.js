@@ -19,14 +19,14 @@ class AppCard extends Component {
     window.alert("Ordered: " + this.input.value);
 
     db.settings({ timestampsInSnapshots: true });
-    const userRef = db.collection("Shop").add({
+    const userRef = db.collection("Requests").add({
       fullname: "E21",
       order: this.input.value
     });
   };
 
   callAttendant = () => {
-    const userRef = db.collection("Shop").add({
+    const userRef = db.collection("Requests").add({
       fullname: "E21",
       order: "Calling Attendant"
     });
