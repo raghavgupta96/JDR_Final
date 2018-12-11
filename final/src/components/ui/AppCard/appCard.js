@@ -18,9 +18,7 @@ class AppCard extends Component {
   handleSubmit = () => {
     window.alert("Ordered: " + this.input.value);
 
-    db.settings({ timestampsInSnapshots: true });
-    const userRef = db
-      .collection("Requests")
+    db.collection("Requests")
       .doc("Daany")
       .set({
         seatNumber: "E21",
@@ -29,11 +27,10 @@ class AppCard extends Component {
   };
 
   callAttendant = () => {
-    const userRef = db
-      .collection("Requests")
+    db.collection("Requests")
       .doc("Daany")
       .set({
-        seatNumber: "E21",
+        seatNumber: "A13",
         order: "Calling Attendant"
       });
   };
