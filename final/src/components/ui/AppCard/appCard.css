@@ -4,5 +4,8 @@
 }
 
 .image {
-  height: 145px;
+  height: auto;
+  width: auto;
+  max-height: 145px;
+  max-width: 100%;
 }

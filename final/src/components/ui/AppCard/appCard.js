@@ -8,6 +8,7 @@ import Form from "react-bootstrap/lib/Form";
 import "./appCard.css";
 import test from "../../../img/TestImage.jpg";
 import firebase from "../../../firestore.js";
+const db = firebase.firestore();
 
 class AppCard extends Component {
   state = {
@@ -16,11 +17,18 @@ class AppCard extends Component {
 
   handleSubmit = () => {
     window.alert("Ordered: " + this.input.value);
-    const db = firebase.firestore();
+
     db.settings({ timestampsInSnapshots: true });
     const userRef = db.collection("Shop").add({
       fullname: "E21",
       order: this.input.value
+    });
+  };
+
+  callAttendant = () => {
+    const userRef = db.collection("Shop").add({
+      fullname: "E21",
+      order: "Calling Attendant"
     });
   };
 
@@ -34,7 +42,6 @@ class AppCard extends Component {
             <Card.Body>
               <Card.Title>{this.props.title}</Card.Title>
               <Card.Text>{this.props.description}</Card.Text>
-              {this.gotDropDown()}
             </Card.Body>
           </Card>
         </Link>
@@ -91,6 +98,12 @@ class AppCard extends Component {
       content.push(
         <Button variant="primary" type="submit" onClick={this.handleSubmit}>
           Submit
+        </Button>
+      );
+    } else {
+      content.push(
+        <Button variant="primary" onClick={this.callAttendant}>
+          Call Attendant
         </Button>
       );
     }

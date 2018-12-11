@@ -6,6 +6,7 @@ import game from "../../../img/game.jpg";
 import twitter from "../../../img/twitter.png";
 import shop from "../../../img/shop.png";
 import steward from "../../../img/steward.png";
+import movies from "../../../img/movies.jpg";
 
 const passenger = [
   {
@@ -18,7 +19,7 @@ const passenger = [
     title: "Movies",
     description: "Watch something to pass the time",
     link: "/movies",
-    image: game
+    image: movies
   },
   {
     title: "Shop",
