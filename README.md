@@ -18,4 +18,4 @@ The Auth0 authentication was implemented based on the following tutorial: https:
 1. Jenkins server integration
 2. Single Sign On (SSO): OAuth by Google (Firebase)
 3. Github: Version control
-4. Additional integrations: PayPal
+4. Additional API integrations: PayPal
