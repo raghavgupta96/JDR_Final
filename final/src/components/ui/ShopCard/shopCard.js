@@ -1,25 +1,48 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+import ReactDOM from "react-dom";
 
 import Card from "react-bootstrap/lib/Card";
-import Button from "react-bootstrap/lib/Button";
 import Form from "react-bootstrap/lib/Form";
 import "./shopCard.css";
-import test from "../../../img/TestImage.jpg";
 import firebase from "../../../firestore";
 import PaypalButton from "../PaypalButton/PaypalButton";
 const db = firebase.firestore();
 
 const CLIENT = {
-  sandbox: process.env.PAYPAL_CLIENT_ID_SANDBOX
+  sandbox:
+    "AWxth9v9dmDzjDMGrVHjifABaTGLuqWtrWr_3ZUjuFP94KbhxNTMVQvGnPwGyEPFxPP3v3GIsXuUUQSi"
 };
 
 const ENV = process.env.NODE_ENV === "production" ? "production" : "sandbox";
 
-class AppCard extends Component {
+class shopCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { price: this.props.price };
+  }
+
+  updatePrice(e) {
+    console.log("Quantity: " + this.input.value);
+    const finalPrice = this.props.price * this.input.value;
+    console.log("Final Price: " + finalPrice);
+    this.setState({ price: finalPrice });
+  }
+
   render() {
-    const onSuccess = payment => console.log("Successful payment!", payment);
+    const onSuccess = payment => {
+      db.settings({ timestampsInSnapshots: true });
+      const userRef = db.collection("Shop").add({
+        seatNumber: "E21",
+        order: this.state.price,
+        quantity: this.input.value,
+        item: this.props.title
+      });
+      console.log("Successful payment!", payment);
+      window.alert("Ordered placed");
+
+      //window.location.reload();
+    };
 
     const onError = error =>
       console.log("Erroneous payment OR failed to load script!", error);
@@ -38,10 +61,10 @@ class AppCard extends Component {
               <Form.Control
                 as="select"
                 ref={ref => {
-                  this.input = ref * this.props.price;
+                  this.input = ref;
                 }}
+                onChange={this.updatePrice.bind(this)}
               >
-                <option>...</option>
                 <option>1</option>
                 <option>2</option>
               </Form.Control>
@@ -51,7 +74,7 @@ class AppCard extends Component {
               env={ENV}
               commit={true}
               currency={"USD"}
-              total={this.input.value}
+              total={this.state.price}
               onSuccess={onSuccess}
               onError={onError}
               onCancel={onCancel}
@@ -63,4 +86,4 @@ class AppCard extends Component {
   }
 }
 
-export default withRouter(AppCard);
+export default withRouter(shopCard);

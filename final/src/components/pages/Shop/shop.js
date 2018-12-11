@@ -9,14 +9,14 @@ import perfume2 from "../../../img/perfume2.jpg";
 const options = [
   {
     title: "Versace Bright Crystal",
-    price: 65.0,
+    price: 65,
     description: "3.0oz/90mL Eau de Toilette Spray for women.",
     image: perfume1,
     dropdown: "snacks"
   },
   {
     title: "CK Be",
-    price: 40.0,
+    price: 40,
     description: "6.7oz/200mL Eau de Toilette Spray for men.",
     image: perfume2
   }

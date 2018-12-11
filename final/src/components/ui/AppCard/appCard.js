@@ -20,14 +20,14 @@ class AppCard extends Component {
 
     db.settings({ timestampsInSnapshots: true });
     const userRef = db.collection("Requests").add({
-      fullname: "E21",
+      seatNumber: "E21",
       order: this.input.value
     });
   };
 
   callAttendant = () => {
     const userRef = db.collection("Requests").add({
-      fullname: "E21",
+      seatNumber: "E21",
       order: "Calling Attendant"
     });
   };
